@@ -1,21 +1,52 @@
-def calculateBMI(height, weight):
-    print("Height = " + str(height) )
-    print("Weight = " + str(weight) )
+def main():
+    print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
+    get_user_input()
+    calc_average_temperature()
+    find_min_max()
+    sort_temperature()
+    calc_median_temperature()
 
-def BMIcalculator(height, weight):
-    bmi = weight/(height*height)
-    print("BMI: "+ str(bmi))
+def display_main_menu():
+    print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
 
-    if bmi < 18.5:
-        print("BMI Range: Under Weight")
-    elif bmi < 25.0:
-        print("BMI Range: Normal Weight")
-    elif bmi > 25.0:
-        print("BMI Range: Over Weight")
+y = []
+def get_user_input():
+    userData = input('Enter numbers: ')
+    x = userData.split(",")
 
-    return bmi
+    for i in x:
+        y.append(float(i))
+    print(y)
+
+def calc_average_temperature():
+    x = 0
+    for i in y:
+        x = x + i
+    calcAVGtemp = x/len(y)
+    print(calcAVGtemp)
 
 
-calculateBMI(weight=57, height=1.73)
+def find_min_max():
+    print(min(y))
+    print(max(y))
 
-BMIcalculator(weight=57,height=1.73)
+def sort_temperature():
+    print(sorted(y))
+
+def calc_median_temperature():
+    median = 0
+    x = len(sorted(y))/2
+
+    if len(y) % 2:
+        median = (x + (x+1))/2
+    else:
+        median = (x + (x+1))/2
+
+    print(median)
+
+def test():
+    thislist = ["apple", "banana", "cherry"]
+    print(thislist)
+
+if __name__ == "__main__":
+    main()
