@@ -1,10 +1,5 @@
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
-    get_user_input()
-    calc_average_temperature()
-    find_min_max()
-    sort_temperature()
-    calc_median_temperature()
 
 def display_main_menu():
     print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
@@ -38,15 +33,30 @@ def calc_median_temperature():
     x = len(sorted(y))/2
 
     if len(y) % 2:
-        median = (x + (x+1))/2
+        median = sorted(y)[int(x)]
     else:
-        median = (x + (x+1))/2
+        median = (sorted(y)[int(x)] + sorted(y)[int(x)-1])/2
 
     print(median)
 
 def test():
     thislist = ["apple", "banana", "cherry"]
     print(thislist)
+
+def calculate_bmi(height, weight):
+    print("Height = " + str(height))
+    print("Weight = " + str(weight))
+
+    myBMI = weight/(height*height)
+
+    print("BMI: " + str(myBMI))
+
+    if myBMI < 18.5:
+        print("Under Weight")
+    elif (myBMI >= 18.5) and (myBMI <= 25.0):
+        print("Normal Weight")
+    elif myBMI > 25.0:
+        print("Over Weight")
 
 if __name__ == "__main__":
     main()
