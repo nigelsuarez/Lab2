@@ -23,23 +23,27 @@ def calc_average_temperature(j):
     return calcAVGtemp
 
 
-def find_min_max():
-    print(min(y))
-    print(max(y))
+def find_min_max(j):
+    minNum = min(j)
+    maxNum = max(j)
+
+    return [minNum, maxNum]
 
 def sort_temperature():
     print(sorted(y))
 
-def calc_median_temperature():
+def calc_median_temperature(j):
     median = 0
-    x = len(sorted(y))/2
+    x = len(sorted(j))/2
 
-    if len(y) % 2:
-        median = sorted(y)[int(x)]
+    if len(j) % 2:
+        median = sorted(j)[int(x)]
     else:
-        median = (sorted(y)[int(x)] + sorted(y)[int(x)-1])/2
+        median = (sorted(j)[int(x)] + sorted(j)[int(x)-1])/2
 
     print(median)
+
+    return median
 
 def test():
     thislist = ["apple", "banana", "cherry"]

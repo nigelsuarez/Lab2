@@ -28,4 +28,4 @@ def test_calc_median_temperature():
 
     result = Lab2.calc_median_temperature(test_input)
 
-    assert result == 3.5
+    assert result == 3
