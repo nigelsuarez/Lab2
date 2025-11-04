@@ -13,12 +13,14 @@ def get_user_input():
         y.append(float(i))
     print(y)
 
-def calc_average_temperature():
+def calc_average_temperature(j):
     x = 0
-    for i in y:
+    for i in j:
         x = x + i
-    calcAVGtemp = x/len(y)
+    calcAVGtemp = x/len(j)
     print(calcAVGtemp)
+
+    return calcAVGtemp
 
 
 def find_min_max():
